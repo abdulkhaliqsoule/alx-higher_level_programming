@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/python3
 def element_at(my_list, idx):
     """Retrieve an element from a list like in C
     Args:
