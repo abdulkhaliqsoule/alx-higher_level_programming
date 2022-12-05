@@ -7,8 +7,9 @@ def max_integer(my_list=[]):
         maximum integer
     """
     max = 0
-    if len(my_list) > 0:
-        for element in my_list:
-            if element > max:
-                 max = element
+    if len(my_list) == 0:
+        return None
+    for element in my_list:
+        if element > max:
+            max = element
     return (max)
