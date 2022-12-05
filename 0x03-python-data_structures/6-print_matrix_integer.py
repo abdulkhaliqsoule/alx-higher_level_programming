@@ -7,6 +7,8 @@ def print_matrix_integer(matrix=[[]]):
         None
     """
     for list in matrix:
-        for int in list:
-            print("{:d}".format(int), end=" ")
+        for element in list:
+            print("{:d}".format(element), end="")
+            if element != list[len(list) - 1]:
+                print(" ", end="")
         print()
