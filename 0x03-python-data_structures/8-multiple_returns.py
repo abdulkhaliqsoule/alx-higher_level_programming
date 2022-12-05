@@ -7,7 +7,8 @@ def multiple_returns(sentence):
         tuple with length of string and its first character
     """
     length = len(sentence)
-    first_character = sentence[0]
     if sentence == "":
         first_character = None
+    else:
+        first_character = sentence[0]
     return ((length, first_character))
