@@ -6,10 +6,6 @@ def max_integer(my_list=[]):
     Returns:
         maximum integer
     """
-    max = 0
-    if len(my_list) == 0:
-        return None
-    for element in my_list:
-        if element > max:
-            max = element
-    return (max)
+    if(len(my_list) == 0):
+        return(None)
+    return(sorted(my_list)[-1])
