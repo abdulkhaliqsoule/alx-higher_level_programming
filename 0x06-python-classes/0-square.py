@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 class Square:
     pass
-
-
-"""
-creates a square class object
-"""
+    """
+    creates a square class object
+    """

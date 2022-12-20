@@ -3,7 +3,6 @@ class Square:
     """
     creates square object
     """
-
     def __init__(self, size=0):
         self.__size = size
     """
@@ -33,3 +32,30 @@ class Square:
         """
         return area of square based on size
         """
+    def __lt__(self, other):
+        return self.area() < other.area()
+        """
+        less than
+        """
+    def __eq__(self, other):
+        return self.area() == other.area()
+        """
+        equal to
+        """
+    def __le__(self, other):
+        return self.area() <= other.area()
+        """
+        less than equal to
+        """
+    def __gt__(self, other):
+        return self.area() > other.area()
+        """
+        greater than
+        """
+    def __ge__(self, other):
+        return self.area() >= other.area()
+        """
+        greater equal
+        """
+    def __ne__(self, other):
+        return self.area() != other.area()
