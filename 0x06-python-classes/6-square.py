@@ -1,72 +1,62 @@
 #!/usr/bin/python3
-"""
-square class
+""" Class Square that defines a square by
+    Private instance attribute: size
+    Private instance attirubute: position
+    Getter and Setters
+    Instantiation with optional size
+    size must be an integer
+    Public instance method: def area(self)
+    Public instance method: def my_print(self)
 """
 
 
 class Square:
-
+    """Class constructor"""
     def __init__(self, size=0, position=(0, 0)):
         self.size = size
         self.position = position
-    """
-    creates a square object
-    """
+
+    """Size getter"""
     @property
     def size(self):
         return self.__size
-        """
-        gets size
-        """
+
+    """Size setter"""
+    @size.setter
+    def size(self, value):
+        if type(value) != int:
+            raise TypeError('size must be an integer')
+        if value < 0:
+            raise ValueError('size must be >= 0')
+        self.__size = value
+
+    """Position getter"""
     @property
     def position(self):
         return self.__position
-        """
-        gets position
-        """
+
+    """Position getter"""
     @position.setter
     def position(self, value):
-        if(type(value) is not tuple or len(value) is not 2 or
-           type(value[0]) is not int or
-           type(value[1]) is not int):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        if(value[0] < 0 or value[1] < 0):
-            raise ValueError("position must be a tuple of 2 positive integers")
+        if type(value) != tuple or len(value) != 2:
+            raise TypeError('position must be a tuple of 2 positive integers')
+        if type(value[0]) != int or type(value[1]) != int:
+            raise TypeError('position must be a tuple of 2 positive integers')
+        if value[0] < 0 or value[1] < 0:
+            raise ValueError('position must be a tuple of 2 positive integers')
         self.__position = value
 
-        """
-        sets position
-        position has to be a tuple of positive integers
-        Raise:
-            ValueError
-            TypeError
-        """
-    @size.setter
-    def size(self, value):
-        if(type(value) is not int):
-            raise TypeError("size must be an integer")
-        elif(value < 0):
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = value
-        """
-        sets size
-        size has to be an integer and positive
-        """
-
+    """returns the current square area"""
     def area(self):
-        return(self.__size**2)
-        """
-        returns the area of the size of the square
-        """
+        return self.__size ** 2
+
+    """prints in stdout the square with the character #"""
     def my_print(self):
-        if(self.size == 0):
+        if self.size != 0:
+            if self.position[1] is not 0:
+                print('\n' * self.position[1], end='')
+            for ch in range(self.size):
+                print(' ' * self.position[0], end='')
+                print('#' * self.size)
+        else:
             print()
-            return
-        for x in range(self.position[1]):
-            print()
-        for x in range(self.size):
-            print("{}{}".format(" " * self.position[0], "#" * self.size))
-        """
-        prints a square of hashtags based on position and size
-        """
