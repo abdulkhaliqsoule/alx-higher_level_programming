@@ -1,0 +1,56 @@
+# 0-add_integer.txt
+===========================
+Doctest for 0-add_integer.py
+============================
+
+This is to test the function called "add_integer()".
+
+Testing Numbers
+===============
+
+"add_integer" returns the additiom of its arguments. or numbers, that value is equivalent to using the "+" operator.
+
+::
+	>>> add_integer = __import__("0-add_integer").add_integer
+	>>> add_integer(2, 5)
+	7
+
+It also works with floating-point numbers and reverts it to int.
+
+::
+	>>> add_integer(2.5, 1.5)
+	3
+
+a has to be given or an exception will be thrown.
+if b is not specified, it will deault to 98.
+
+::
+	>>> add_integer(0)
+	98
+	>>> add_integer(3.0,)
+	101
+	>>> add_integer(-5.5, 100.3)
+	95
+
+Non-numbers
+===========
+
+Non-numbers should throw TypeError Exceptions
+
+::
+
+	>>> add_integer('a', 5)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+	>>> add_integer(2, ['A', 'B', 3])
+	Traceback (most recent call last):
+	TypeError: b must be an integer
+
+>>> add_integer(float('inf'))
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(float('NaN'))
+Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer
