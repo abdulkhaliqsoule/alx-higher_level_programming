@@ -6,9 +6,9 @@ request(address, function (error, response, body) {
   if (error) {
     console.log(error);
   } else {
-    let results = JSON.parse(body).characters;
-    for (let i of results) {
-      request(i, (e, r, b) => console.log(JSON.parse(b)['name']));
+    const results = JSON.parse(body).characters;
+    for (const i of results) {
+      request(i, (e, r, b) => console.log(JSON.parse(b).name));
     }
   }
 });
